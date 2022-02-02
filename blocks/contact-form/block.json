@@ -1,0 +1,17 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "create-block/contact-form",
+	"version": "0.1.0",
+	"title": "Contact Form",
+	"category": "widgets",
+	"icon": "index-card",
+	"description": "Simple contact form",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "custom-blocks-test",
+	"editorScript": "file:../../build/contact-form.js",
+	"editorStyle": "file:../../build/contact-form.css",
+	"style": "file:../../build/style-contact-form.css"
+}
