@@ -2,4 +2,5 @@
 import '../blocks/services-block';
 import '../blocks/contact-cta';
 import '../blocks/contact-form';
+import '../blocks/custom-slider';
 

@@ -260,7 +260,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"create-block/services-block","version":"0.1.0","title":"Services Block","category":"widgets","icon":"money-alt","description":"Service block","supports":{"html":false},"textdomain":"custom-blocks-test","editorScript":"file:../../build/services-block.js","editorStyle":"file:../../build/services-block.css","style":"file:../../build/style-services-block.css"}');
+module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"create-block/services-block","version":"0.1.0","title":"Services Block","category":"custom-blocks-test","icon":"money-alt","description":"Service block","supports":{"html":false},"textdomain":"custom-blocks-test","editorScript":"file:../../build/services-block.js","editorStyle":"file:../../build/services-block.css","style":"file:../../build/style-services-block.css"}');
 
 /***/ })
 

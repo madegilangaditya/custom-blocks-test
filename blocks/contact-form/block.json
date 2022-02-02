@@ -4,7 +4,7 @@
 	"name": "create-block/contact-form",
 	"version": "0.1.0",
 	"title": "Contact Form",
-	"category": "widgets",
+	"category": "custom-blocks-test",
 	"icon": "index-card",
 	"description": "Simple contact form",
 	"supports": {

@@ -6,5 +6,6 @@ module.exports = {
 		'services-block': './blocks/services-block',
 		'contact-cta': './blocks/contact-cta',
 		'contact-form': './blocks/contact-form',
+		'custom-slider': './blocks/custom-slider',
 	},
 };

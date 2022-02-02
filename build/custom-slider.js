@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./blocks/contact-form/edit.js":
-/*!*************************************!*\
-  !*** ./blocks/contact-form/edit.js ***!
-  \*************************************/
+/***/ "./blocks/custom-slider/edit.js":
+/*!**************************************!*\
+  !*** ./blocks/custom-slider/edit.js ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -18,9 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./blocks/contact-form/editor.scss");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./blocks/custom-slider/editor.scss");
 
 
 /**
@@ -37,7 +35,11 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
-
+const MY_TEMPLATE = [["core/image", {}], ["core/heading", {
+  placeholder: "Service Title"
+}], ["core/paragraph", {
+  placeholder: "Service Description"
+}]];
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -60,70 +62,27 @@ function Edit(_ref) {
     attributes,
     setAttributes
   } = _ref;
-  const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(); // const updateNameLabel = ( val ) => {
-  //     setAttributes( { name: val } );
-  // }
-
-  const {
-    name,
-    email,
-    phone,
-    message
-  } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: "Name Label",
-    value: name,
-    onChange: val => {
-      setAttributes({
-        name: val
-      });
-    },
-    className: "name"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: "Email Label",
-    value: email,
-    onChange: val => {
-      setAttributes({
-        email: val
-      });
-    },
-    className: "email"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: "Phone Label",
-    value: phone,
-    onChange: val => {
-      setAttributes({
-        phone: val
-      });
-    },
-    className: "phone"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: "Message Label",
-    value: message,
-    onChange: val => {
-      setAttributes({
-        message: val
-      });
-    },
-    className: "message"
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
+    template: MY_TEMPLATE,
+    templateLock: "all"
   }));
 }
 
 /***/ }),
 
-/***/ "./blocks/contact-form/index.js":
-/*!**************************************!*\
-  !*** ./blocks/contact-form/index.js ***!
-  \**************************************/
+/***/ "./blocks/custom-slider/index.js":
+/*!***************************************!*\
+  !*** ./blocks/custom-slider/index.js ***!
+  \***************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/contact-form/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./blocks/contact-form/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./blocks/contact-form/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/contact-form/block.json");
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./blocks/custom-slider/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./blocks/custom-slider/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./blocks/custom-slider/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./blocks/custom-slider/block.json");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -158,25 +117,15 @@ const {
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(name, { ...settings,
   attributes: {
-    name: {
+    title: {
       type: 'string',
-      source: 'text',
-      selector: '.name'
+      source: 'html',
+      selector: 'h6'
     },
-    email: {
+    description: {
       type: 'string',
-      source: 'text',
-      selector: '.email'
-    },
-    phone: {
-      type: 'string',
-      source: 'text',
-      selector: '.phone'
-    },
-    message: {
-      type: 'string',
-      source: 'text',
-      selector: '.message'
+      source: 'html',
+      selector: 'p'
     }
   },
 
@@ -193,10 +142,10 @@ const {
 
 /***/ }),
 
-/***/ "./blocks/contact-form/save.js":
-/*!*************************************!*\
-  !*** ./blocks/contact-form/save.js ***!
-  \*************************************/
+/***/ "./blocks/custom-slider/save.js":
+/*!**************************************!*\
+  !*** ./blocks/custom-slider/save.js ***!
+  \**************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -235,67 +184,18 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 
-function save(_ref) {
-  let {
-    attributes
-  } = _ref;
-  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
-  const {
-    name,
-    email,
-    phone,
-    message
-  } = attributes;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
-    class: "ex-form mx-auto"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "form-group"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    htmlFor: "name",
-    className: "name"
-  }, name), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "text",
-    class: "form-control",
-    id: "name"
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "form-group"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    htmlFor: "email",
-    className: "email"
-  }, email), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "email",
-    class: "form-control",
-    id: "email"
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "form-group"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    htmlFor: "phone",
-    className: "phone"
-  }, phone), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "number",
-    class: "form-control",
-    id: "phone"
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "form-group"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    htmlFor: "message",
-    className: "message"
-  }, message), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("textarea", {
-    class: "form-control",
-    id: "message",
-    rows: "7"
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    type: "submit",
-    class: "btn btn-primary"
-  }, "Submit")));
+function save(props) {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "slide-wrap"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
 }
 
 /***/ }),
 
-/***/ "./blocks/contact-form/editor.scss":
-/*!*****************************************!*\
-  !*** ./blocks/contact-form/editor.scss ***!
-  \*****************************************/
+/***/ "./blocks/custom-slider/editor.scss":
+/*!******************************************!*\
+  !*** ./blocks/custom-slider/editor.scss ***!
+  \******************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -304,10 +204,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./blocks/contact-form/style.scss":
-/*!****************************************!*\
-  !*** ./blocks/contact-form/style.scss ***!
-  \****************************************/
+/***/ "./blocks/custom-slider/style.scss":
+/*!*****************************************!*\
+  !*** ./blocks/custom-slider/style.scss ***!
+  \*****************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -336,16 +236,6 @@ module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
-/***/ "@wordpress/components":
-/*!************************************!*\
-  !*** external ["wp","components"] ***!
-  \************************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["components"];
-
-/***/ }),
-
 /***/ "@wordpress/element":
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
@@ -366,13 +256,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ }),
 
-/***/ "./blocks/contact-form/block.json":
-/*!****************************************!*\
-  !*** ./blocks/contact-form/block.json ***!
-  \****************************************/
+/***/ "./blocks/custom-slider/block.json":
+/*!*****************************************!*\
+  !*** ./blocks/custom-slider/block.json ***!
+  \*****************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"create-block/contact-form","version":"0.1.0","title":"Contact Form","category":"custom-blocks-test","icon":"index-card","description":"Simple contact form","supports":{"html":false},"textdomain":"custom-blocks-test","editorScript":"file:../../build/contact-form.js","editorStyle":"file:../../build/contact-form.css","style":"file:../../build/style-contact-form.css"}');
+module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json","apiVersion":2,"name":"create-block/custom-slider","version":"0.1.0","title":"Custom Slider","category":"custom-blocks-test","icon":"money-alt","description":"Custom Slider","supports":{"html":false},"textdomain":"custom-blocks-test","editorScript":"file:../../build/custom-slider.js","editorStyle":"file:../../build/custom-slider.css","style":"file:../../build/style-custom-slider.css","script":"./slick/slick.min.js","viewScript":"file:./main.js"}');
 
 /***/ })
 
@@ -488,8 +378,8 @@ module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"contact-form": 0,
-/******/ 			"style-contact-form": 0
+/******/ 			"custom-slider": 0,
+/******/ 			"style-custom-slider": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -541,9 +431,9 @@ module.exports = JSON.parse('{"$schema":"https://json.schemastore.org/block.json
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["style-contact-form"], function() { return __webpack_require__("./blocks/contact-form/index.js"); })
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["style-custom-slider"], function() { return __webpack_require__("./blocks/custom-slider/index.js"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=contact-form.js.map
+//# sourceMappingURL=custom-slider.js.map

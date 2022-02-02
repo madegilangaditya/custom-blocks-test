@@ -1,0 +1,19 @@
+{
+	"$schema": "https://json.schemastore.org/block.json",
+	"apiVersion": 2,
+	"name": "create-block/custom-slider",
+	"version": "0.1.0",
+	"title": "Custom Slider",
+	"category": "custom-blocks-test",
+	"icon": "money-alt",
+	"description": "Custom Slider",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "custom-blocks-test",
+	"editorScript": "file:../../build/custom-slider.js",
+	"editorStyle": "file:../../build/custom-slider.css",
+	"style": "file:../../build/style-custom-slider.css",
+	"script": "./slick/slick.min.js",
+	"viewScript": "file:./main.js"
+}

@@ -4,7 +4,7 @@
 	"name": "create-block/services-block",
 	"version": "0.1.0",
 	"title": "Services Block",
-	"category": "widgets",
+	"category": "custom-blocks-test",
 	"icon": "money-alt",
 	"description": "Service block",
 	"supports": {
