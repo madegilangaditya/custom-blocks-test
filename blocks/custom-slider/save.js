@@ -23,10 +23,15 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function save(props) {
+	const locationFields = props.attributes.locations.map( ( location, index ) => {
+		return <p key={ index }>{ location.address }</p>;
+	} );
+
 	return (
-		<div className='slide-wrap'>
-			<InnerBlocks.Content />
-		</div>
+		<div { ...useBlockProps.save() }>
+				<h2>Block</h2>
+				{ locationFields }
+			</div>
 			
 		
 	);

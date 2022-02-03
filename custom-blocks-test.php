@@ -52,7 +52,7 @@ function custom_block_test_slider_on() {
     if ( has_block( 'create-block/custom-slider' ) ) {
         wp_enqueue_script( 'slick-init-js', plugin_dir_url( __FILE__ ). 'lib/slick/slick.min.js', array('jquery') , time(), true );
         wp_enqueue_style( 'slick-init-css', plugin_dir_url( __FILE__ ). 'lib/slick/slick.css', array() , time() );
-        wp_enqueue_style( 'slick-theme-css', plugin_dir_url( __FILE__ ). 'lib/slick/slick.theme.css', array() , time() );
+        wp_enqueue_style( 'slick-theme-css', plugin_dir_url( __FILE__ ). 'lib/slick/slick-theme.css', array() , time() );
         wp_enqueue_script( 'slider-main', plugin_dir_url( __FILE__ ). 'blocks/custom-slider/main.js', array('jquery') , time(), true );
     }
 }

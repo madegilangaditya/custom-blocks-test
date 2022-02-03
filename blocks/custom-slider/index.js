@@ -35,15 +35,15 @@ registerBlockType(name, {
 	...settings,
 
 	attributes:{
-		title:{
-			type:'string',
-			source:'html',
-			selector:'h6'
-		},
-		description:{
-			type:'string',
-			source:'html',
-			selector:'p'
+		// title:{
+		// 	type:'string',
+		// 	source:'html',
+		// 	selector:'h6'
+		// },
+		locations:{
+			type:'array',
+			selector: '.grf__location-address',
+			default:[]
 		}
 	},
 	/**
